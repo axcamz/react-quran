@@ -15,7 +15,17 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-
+      theme: {
+        100: '#d8f3dc',
+        200: '#b7e4c7',
+        300: '#95d5b2',
+        400: '#74c69d',
+        500: '#52b788',
+        600: '#40916C',
+        800: '#2D6A4F',
+        900: '#1B4332',
+        1000: '#081C15',
+      },
       black: colors.black,
       white: colors.white,
       gray: colors.coolGray,
@@ -26,7 +36,6 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
-      teal: colors.teal,
     },
     spacing: {
       px: '1px',

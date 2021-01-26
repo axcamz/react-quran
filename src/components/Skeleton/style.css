@@ -1,0 +1,23 @@
+.shimmer{
+    height: 100%;
+    width: 50%;
+    top: 0;
+    transform: skew(-60deg);
+    background-color: rgba(255, 255, 255, .4);
+    position: absolute;
+    box-shadow: 0px 0px 20px white;
+
+    animation: animateShimmer 1300ms infinite;
+}
+
+@keyframes animateShimmer {
+    0%{
+        left: -200%;
+    }
+    50%{
+        left: -100%;
+    }
+    100%{
+        left: 150%;
+    }
+}

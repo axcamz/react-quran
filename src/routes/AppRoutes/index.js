@@ -1,17 +1,18 @@
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-import { AllSurah } from "../../pages";
+import { AllSurah, Surah } from "../../pages";
 
 const Routes = () => {
     return (
-        <div>
-            <Router>
-                <Switch>
-                    <Route path="/surah">
-                        <AllSurah/>
-                    </Route>
-                </Switch>
-            </Router>
-        </div>
+        <Router>
+            <Switch>
+                <Route exact path="/surah">
+                    <AllSurah/>
+                </Route>
+                <Route path="/surah/:id">
+                    <Surah/>
+                </Route>
+            </Switch>
+        </Router>
     )
 }
 

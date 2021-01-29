@@ -16,7 +16,7 @@ const ToggleDarkmode = () => {
     return (
         <div
             onClick={() => setDark(!dark)} 
-            className={`h-6 w-6 rounded-full ${!dark ? "bg-gray-800" : "bg-white"}`}></div>
+            className={`h-6 w-6 rounded-full transition duration-300 ${!dark ? "bg-gray-800" : "bg-white"}`}></div>
     )
 }
 

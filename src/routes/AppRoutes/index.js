@@ -1,4 +1,4 @@
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router, Redirect } from "react-router-dom";
 import { AllSurah, Surah } from "../../pages";
 
 const Routes = () => {

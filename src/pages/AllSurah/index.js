@@ -14,10 +14,10 @@ const AllSurah = () => {
         const getAllSurah = async () => {
             await axios.get("http://localhost:3001/surah")
             .then(res => {
-                console.log(res.data.data);
                 setData(res.data.data)
                 setLoading(false)
-            }, () => console.log(data))
+                console.log(data);
+            })
             .catch(err => {
                 console.log(err);
             })
@@ -28,7 +28,7 @@ const AllSurah = () => {
     }, [])
 
     const getSurah = id => {
-        history.push(`surah/${id}/`)
+        history.push(`/surah/${id}`)
     }
 
     return (

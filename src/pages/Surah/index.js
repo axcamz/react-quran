@@ -6,15 +6,13 @@ import { DropDown } from "../../components/Icons"
 
 import classNames from "classnames"
 import { GET_SURAH } from "../../config"
+import { Settings } from "../../components/molecules"
 
 const Surah = (props) => {
     const [data, setData] = useState({})
     const [loading, setLoading] = useState(true)
     const {id: ayahId} = useParams()
-    const [settings, setSettings] = useState({
-        arti: false,
-        latin: false
-    })
+    const [settings, setSettings] = useState({})
 
     const [open, setOpen] = useState(false);
 
@@ -55,24 +53,7 @@ const Surah = (props) => {
                             </div>
                         </div>
                         <div className={classNames("bg-white dark:bg-gray-700 shadow-lg w-72 p-3 absolute opacity-0 transition-all right-5 -top-3 z-10 rounded transform", open ? "opacity-100 visible translate-y-20":"invisible")}>
-                            <div className="font-poppins dark:text-blue-100">
-                                <div className="p-1 cursor-pointer" onClick={() => setSettings({...settings, arti: !settings.arti})}>
-                                    <input 
-                                        type="checkbox" 
-                                        checked={settings.arti} 
-                                        name="arti" 
-                                        id="arti"
-                                    /> <span>Arti</span>
-                                </div>
-                                <div className="p-1 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 rounded" onClick={() => setSettings({...settings, latin: !settings.latin})}>
-                                    <input 
-                                        type="checkbox" 
-                                        checked={settings.latin} 
-                                        name="arti" 
-                                        id="arti"
-                                    /> <span>Transliteration</span>
-                                </div>
-                            </div>
+                            <Settings settings={data => setSettings(data)}/>
                         </div>
                     </Header>
                     {

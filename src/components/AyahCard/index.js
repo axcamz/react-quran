@@ -12,7 +12,7 @@ const AyahCard = ({ayah, number, tranlation, transliteration, settings}) => {
     }
 
     if(focusMode === false){
-        const { arti, latin } = settingsAyah
+        const { terjemah, latin } = settingsAyah
         return (
             <div className="px-4 w-full border-b dark:text-blue-100 py-5 dark:border-gray-700 border-gray-200">
                 <div className="text-right max-w-3xl ml-auto">
@@ -21,7 +21,7 @@ const AyahCard = ({ayah, number, tranlation, transliteration, settings}) => {
                     </p>
                 </div>
                 <div className="flex font-poppins justify-between">
-                    <div className={classNames("font-poppins max-w-2xl overflow-hidden duration-300 transition-all", arti ? "max-h-96 mt-3":"max-h-0 mt-0")}>
+                    <div className={classNames("font-poppins max-w-2xl overflow-hidden duration-300 transition-all", terjemah ? "max-h-96 mt-3":"max-h-0 mt-0")}>
                         <span>
                             {tranlation}
                         </span>

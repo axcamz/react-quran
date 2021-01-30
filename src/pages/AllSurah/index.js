@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom"
 import Card from "../../components/Card"
 import {Header, ListSurah, Navbar} from "../../components/index"
 import SurahCardSkeleton from "../../components/Skeleton/SurahCardSkeleton"
+import { GET_ALL_SURAH } from "../../config"
 
 const AllSurah = () => {
     const [data, setData] = useState([])
@@ -12,7 +13,7 @@ const AllSurah = () => {
 
     useEffect(() => {
         const getAllSurah = async () => {
-            await axios.get("http://localhost:3001/surah")
+            await axios.get(GET_ALL_SURAH)
             .then(res => {
                 setData(res.data.data)
                 setLoading(false)

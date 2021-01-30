@@ -5,6 +5,7 @@ import { AyahCard, Header } from "../../components"
 import { DropDown } from "../../components/Icons"
 
 import classNames from "classnames"
+import { GET_SURAH } from "../../config"
 
 const Surah = (props) => {
     const [data, setData] = useState({})
@@ -16,7 +17,7 @@ const Surah = (props) => {
 
     useEffect(() => {
         const getAllAyah = async () => {
-            await axios.get(`http://localhost:3001/surah/${ayahId}`)
+            await axios.get(GET_SURAH(ayahId))
             .then(res => {
                 console.log(res.data.data);
                 setData(res.data.data)

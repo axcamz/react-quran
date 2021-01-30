@@ -1,6 +1,7 @@
 import { useState } from "react";
+import classNames from 'classnames'
 
-const AyahCard = ({ayah, number, tranlation, settings}) => {
+const AyahCard = ({ayah, number, tranlation, transliteration, settings}) => {
     const [focusMode, setFocusMode] = useState(false)
     const settingsAyah = settings;
 
@@ -11,24 +12,27 @@ const AyahCard = ({ayah, number, tranlation, settings}) => {
     }
 
     if(focusMode === false){
-        const { arti } = settingsAyah
+        const { arti, latin } = settingsAyah
         return (
-            <div className="px-4 w-full border-b dark:text-blue-100 transition-all py-4 dark:border-gray-700 border-gray-200">
+            <div className="px-4 w-full border-b dark:text-blue-100 py-5 dark:border-gray-700 border-gray-200">
                 <div className="text-right max-w-3xl ml-auto">
-                    <p className="font-serif text-4xl leading-normal">{ayah}
+                    <p className="font-serif md:text-4xl text-3xl leading-normal">{ayah}
                     <span className="mr-5 text-lg px-2 rounded-full border border-gray-500">{arabicNumber(number)}</span>
                     </p>
                 </div>
-                {
-                    arti && (
-                        <div className="font-poppins max-w-2xl mt-1">
-                            <span>
-                                {tranlation}
-                            </span>
-                        </div>
+                <div className="flex font-poppins justify-between">
+                    <div className={classNames("font-poppins max-w-2xl overflow-hidden duration-300 transition-all", arti ? "max-h-96 mt-3":"max-h-0 mt-0")}>
+                        <span>
+                            {tranlation}
+                        </span>
+                    </div>
+                    <div className={classNames("font-poppins max-w-xl overflow-hidden duration-300 transition-all", latin ? "max-h-96 mt-3":"max-h-0 mt-0")}>
+                        <span className="font-light italic">
+                            {transliteration}
+                        </span>
+                    </div>
+                </div>
 
-                    )
-                }
             </div>
         )
     } else {

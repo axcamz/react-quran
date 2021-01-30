@@ -5,6 +5,7 @@ const Routes = () => {
     return (
         <Router>
             <Switch>
+                <Route exact path="/"><Redirect to="/surah"/></Route>
                 <Route exact path="/surah">
                     <AllSurah/>
                 </Route>

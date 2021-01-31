@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { GlobalContext } from "../../context"
 
 const ToggleDarkmode = () => {
-    const [dark, setDark] = useState(false)
+    const [settings, setSettings] = useContext(GlobalContext)
+    const { darkMode } = settings
 
     useEffect(() => {
         const root = document.querySelector("#root")
-        if(dark){
+        if(darkMode){
             root.classList.add("dark")
         } else {
             root.classList.remove("dark")
@@ -15,8 +17,8 @@ const ToggleDarkmode = () => {
 
     return (
         <div
-            onClick={() => setDark(!dark)} 
-            className={`h-6 w-6 rounded-full transition duration-300 ${!dark ? "bg-gray-800" : "bg-white"}`}></div>
+            onClick={() => setSettings({...settings, darkMode: !darkMode})} 
+            className={`h-6 w-6 rounded-full transition duration-300 ${!settings.darkMode ? "bg-gray-800" : "bg-white"}`}></div>
     )
 }
 

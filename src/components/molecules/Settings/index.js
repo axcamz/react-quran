@@ -1,12 +1,11 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { GlobalContext } from "../../../context"
 import { CheckBox } from "../../atoms"
 
 const Settings = (props) => {
     // Filtering Ayah
-    const [settings, setSettings] = useState({
-        terjemah: false,
-        latin: false
-    })
+    const [settings, setSettings] = useContext(GlobalContext)
+
 
     props.settings(settings)
 

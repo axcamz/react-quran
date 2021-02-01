@@ -1,0 +1,32 @@
+/* Checkbox input */
+input.switch {
+  display: none;
+}
+label {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  width: 50px;
+  height: 30px;
+  border-radius: 50px;
+  border: 5px solid #23233f;
+  background: #23233f;
+  overflow: hidden;
+}
+label:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: 300ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.11, 1.18);
+  border-radius: 50%;
+}
+.switch:not(:checked) ~ label:before {
+  transform: translateX(0%);
+  background: #ddd;
+}
+.switch:checked ~ label:before {
+  transform: translateX(100%);
+  background: #06ab00;
+}

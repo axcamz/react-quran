@@ -37,7 +37,7 @@ const Surah = (props) => {
     const ayah = data.verses
 
     return (
-        <div className="dark:bg-gray-800 h-screen">
+        <div className="dark:bg-gray-800 min-h-screen">
             {
                 !loading && <>
                     <Header 

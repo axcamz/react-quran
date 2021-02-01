@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import classNames from 'classnames'
+import { GlobalContext } from "../../context";
 
-const AyahCard = ({ayah, number, tranlation, transliteration, settings}) => {
+const AyahCard = ({ayah, number, tranlation, transliteration}) => {
     const [focusMode, setFocusMode] = useState(false)
-    const settingsAyah = settings;
+    const [settings] = useContext(GlobalContext);
 
 
     const arabicNumber = (num) => {
@@ -12,7 +13,7 @@ const AyahCard = ({ayah, number, tranlation, transliteration, settings}) => {
     }
 
     if(focusMode === false){
-        const { terjemah, latin } = settingsAyah
+        const { terjemah, latin } = settings
         return (
             <div className="px-4 w-full border-b dark:text-blue-100 py-5 dark:border-gray-700 border-gray-200">
                 <div className="text-right max-w-3xl ml-auto">

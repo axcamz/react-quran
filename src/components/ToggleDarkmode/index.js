@@ -1,19 +1,12 @@
 import { useContext, useEffect, useState } from "react"
+import toggleDarkMode from "../../config/theme"
 import { GlobalContext } from "../../context"
 
 const ToggleDarkmode = () => {
-    const [settings, setSettings] = useContext(GlobalContext)
-    const { darkMode } = settings
+    const [settings, setSettings] = useContext(GlobalContext);
+    const { darkMode } = settings;
 
-    useEffect(() => {
-        const root = document.querySelector("#root")
-        if(darkMode){
-            root.classList.add("dark")
-        } else {
-            root.classList.remove("dark")
-        }
-
-    })
+    toggleDarkMode(darkMode);
 
     return (
         <div

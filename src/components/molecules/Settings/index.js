@@ -1,27 +1,32 @@
-import { useContext, useState } from "react"
-import { GlobalContext } from "../../../context"
-import { CheckBox } from "../../atoms"
+import { useContext, useState } from "react";
+import toggleDarkMode from "../../../config/theme";
+import { GlobalContext } from "../../../context";
+import { CheckBox, Switch } from "../../atoms";
 
-const Settings = (props) => {
+const Settings = () => {
     // Filtering Ayah
-    const [settings, setSettings] = useContext(GlobalContext)
+    const [settings, setSettings] = useContext(GlobalContext);
+    const { terjemah, latin, darkMode } = settings;
 
-
-    props.settings(settings)
+    toggleDarkMode(darkMode)
 
     return (
         <div className="font-poppins dark:text-blue-100">
             <CheckBox
                 id="terjemah"
                 label="Translation"
-                checked={settings.terjemah}
-                onClick={() => setSettings({...settings, terjemah: !settings.terjemah})}
+                checked={terjemah}
+                onClick={() => setSettings({...settings, terjemah: !terjemah})}
             />
             <CheckBox
                 id="latin"
                 label="Transliteration"
-                checked={settings.latin}
+                checked={latin}
                 onClick={() => setSettings({...settings, latin: !settings.latin})}
+            />
+            <Switch
+                onClick={() => setSettings({...settings, darkMode: !darkMode})}
+                checked={darkMode}
             />
         </div>
     )

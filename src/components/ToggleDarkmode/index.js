@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react"
-import toggleDarkMode from "../../config/theme"
 import { GlobalContext } from "../../context"
+import useTheme from "../../hooks/useTheme";
 
 const ToggleDarkmode = () => {
     const [settings, setSettings] = useContext(GlobalContext);
     const { darkMode } = settings;
 
-    toggleDarkMode(darkMode);
+    useTheme(darkMode)
 
     return (
         <div

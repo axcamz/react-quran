@@ -1,4 +1,4 @@
-import Settings from "./Settings"
+import Settings from "./SettingsCard"
 
 export {
     Settings

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import toggleDarkMode from "../../../config/theme";
 import { GlobalContext } from "../../../context";
+import useTheme from "../../../hooks/useTheme";
 import { CheckBox, Switch } from "../../atoms";
 
 const Settings = () => {
@@ -8,7 +8,7 @@ const Settings = () => {
     const [settings, setSettings] = useContext(GlobalContext);
     const { terjemah, latin, darkMode } = settings;
 
-    toggleDarkMode(darkMode)
+    useTheme(darkMode)
 
     return (
         <div className="font-poppins dark:text-blue-100">

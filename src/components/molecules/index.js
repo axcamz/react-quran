@@ -1,5 +1,5 @@
-import Settings from "./SettingsCard"
+import SettingsCard from "./SettingsCard"
 
 export {
-    Settings
+    SettingsCard
 }

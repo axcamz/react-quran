@@ -7,7 +7,7 @@ const Arabic = ({arab, number}) => {
     return (
         <div className="text-right max-w-3xl ml-auto">
             <p className="font-serif md:text-4xl md:leading-relaxed text-3xl leading-normal">{arab}
-            <span className="mr-5 text-lg px-2 rounded-full border border-gray-500">{arabicNumber(number)}</span>
+                <span className="mr-5 text-lg px-2 rounded-full border border-gray-500">{arabicNumber(number)}</span>
             </p>
         </div>
     )

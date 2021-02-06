@@ -2,7 +2,7 @@ import Quran from './Quran'
 import Wishlist from './Wishlist'
 import History from './History'
 import Search from './Search'
-import DropDown from './DropDown'
+import DropDownIcon from './DropDownIcon'
 import BookMark from './BookMark'
 
 export {
@@ -10,6 +10,6 @@ export {
     Wishlist,
     History,
     Search,
-    DropDown,
+    DropDownIcon,
     BookMark
 }

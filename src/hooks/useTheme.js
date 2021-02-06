@@ -2,11 +2,11 @@ import { useEffect } from "react"
 
 export default function useTheme(value){
     useEffect(() => {
-        const root = document.querySelector("#root")
+        const html = document.querySelector("html")
         if(value){
-            root.classList.add("dark")
+            html.classList.add("dark")
         } else {
-            root.classList.remove("dark")
+            html.classList.remove("dark")
         }
     })
 }

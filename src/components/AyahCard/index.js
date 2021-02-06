@@ -17,7 +17,7 @@ const AyahCard = ({ayah, number, tranlation, transliteration}) => {
                     number={number}
                 />
                 <div className="flex lg:flex-row flex-col font-poppins justify-between">
-                    <div className={classNames("font-poppins max-w-2xl lg:order-1 order-2 overflow-hidden duration-300 transition-all", terjemah ? "max-h-96 mt-3":"max-h-0 mt-0")}>
+                    <div className={classNames("font-poppins lg:max-w-xl xl:max-w-3xl lg:pr-4 lg:order-1 order-2 overflow-hidden duration-300 transition-all", terjemah ? "max-h-96 mt-3":"max-h-0 mt-0")}>
                         <span>
                             {tranlation}
                         </span>

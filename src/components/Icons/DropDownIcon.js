@@ -1,4 +1,4 @@
-const DropDown = ({className}) => {
+const DropDownIcon = ({className}) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" className={className}  fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" stroke="currentColor" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -6,4 +6,4 @@ const DropDown = ({className}) => {
     )
 }
 
-export default DropDown
+export default DropDownIcon

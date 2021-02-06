@@ -1,4 +1,4 @@
-import { Search } from "../Icons"
+import { Search } from "../../Icons"
 
 const Searchbar = () => {
     return (

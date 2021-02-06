@@ -20,7 +20,7 @@ const Card = ({name, lafadz, arti, index, onClick, ...res}) => {
                     <span className="text-sm cursor-default lg:text-lg dark:text-gray-50 text-gray-700 font-light">{arti}</span>
                 </div>
                 <div>
-                    <a onClick={onClick} className="text-3xl cursor-pointer lg:text-4xl font-serif">{lafadz}</a>
+                    <a onClick={onClick} className="text-3xl cursor-pointer hover:text-theme-500 transition-all lg:text-4xl font-serif">{lafadz}</a>
                 </div>
             </div>
         </div>

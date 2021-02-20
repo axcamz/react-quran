@@ -5,7 +5,7 @@ const Arabic = ({arab, number}) => {
         return String(value).replace(/[0123456789]/g, (d)=>{return arabicNumbers[d]});
     }
     return (
-        <div className="text-right max-w-3xl ml-auto">
+        <div className="text-right max-w-3xl ml-auto font-serif">
             <p className="font-serif md:text-4xl md:leading-relaxed text-3xl leading-normal">{arab}
                 <span className="mr-5 text-lg px-2 rounded-full border border-gray-500">{arabicNumber(number)}</span>
             </p>

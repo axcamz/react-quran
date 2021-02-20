@@ -8,8 +8,8 @@ const Navbar = () => {
                 <div className="logo lg:mb-11">
                     <Quran className="text-theme-600 dark:text-gray-500 h-9 w-9 md:h-11 md:w-11 lg:mb-3"/>
                 </div>
-                <Wishlist className="text-theme-600 dark:text-gray-500 h-9 w-9 md:h-11 md:w-11 lg:mb-3"/>
-                <History className="text-theme-600 dark:text-gray-500 h-9 w-9 md:h-11 md:w-11 lg:mb-3"/>
+                {/* <Wishlist className="text-theme-600 dark:text-gray-500 h-9 w-9 md:h-11 md:w-11 lg:mb-3"/>
+                <History className="text-theme-600 dark:text-gray-500 h-9 w-9 md:h-11 md:w-11 lg:mb-3"/> */}
                 <ToggleDarkmode/>
             </div>
         </div>

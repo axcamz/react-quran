@@ -4,6 +4,8 @@ import History from './History'
 import Search from './Search'
 import DropDownIcon from './DropDownIcon'
 import BookMark from './BookMark'
+import ArrowLeft from './ArrowLeft'
+import ChevronUp from './ChevronUp'
 
 export {
     Quran,
@@ -11,5 +13,7 @@ export {
     History,
     Search,
     DropDownIcon,
-    BookMark
+    BookMark,
+    ArrowLeft,
+    ChevronUp
 }

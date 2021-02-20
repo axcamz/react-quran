@@ -7,6 +7,7 @@ import FadePopup from "./FadePopup"
 import Heading from "./Heading"
 import Searchbar from "./Searchbar"
 import Container from "./Container"
+import Bismillah from "./Bismillah"
 
 export {
     CheckBox,
@@ -17,5 +18,6 @@ export {
     FadePopup,
     Heading,
     Searchbar,
-    Container
+    Container,
+    Bismillah
 }

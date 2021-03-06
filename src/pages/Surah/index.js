@@ -1,12 +1,11 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { AyahCard } from "../../components"
-
 import { GET_SURAH } from "../../config"
 import { Header } from "../../components/organisms"
 import { ChevronUp } from "../../components/Icons"
 import { Bismillah } from "../../components/atoms"
+import { AyahCard } from "../../components/molecules"
 
 const Surah = () => {
     const [data, setData] = useState({})

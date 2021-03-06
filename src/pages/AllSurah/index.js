@@ -1,34 +1,16 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
+import { ListSurah } from "../../components/atoms"
 import Card from "../../components/Card"
-import {ListSurah, Sidebar} from "../../components/index"
+import { Sidebar } from "../../components/molecules"
 import Header from "../../components/organisms/Header"
 import SurahCardSkeleton from "../../components/Skeleton/SurahCardSkeleton"
 import { GET_ALL_SURAH } from "../../config"
 
-const AllSurah = () => {
-    const [data, setData] = useState([])
-    const [loading, setLoading] = useState(true)
+const AllSurah = (props) => {
     const history = useHistory()
-
-    useEffect(() => {
-        const getAllSurah = async () => {
-            await axios.get(GET_ALL_SURAH)
-            .then(res => {
-                setData(res.data.data)
-                setLoading(false)
-                console.log(data);
-            })
-            .catch(err => {
-                console.log(err);
-            })
-        }
-
-        getAllSurah()
-        
-    }, [])
-
+    const {loading, data} = props
     const getSurah = id => {
         history.push(`/surah/${id}`)
     }

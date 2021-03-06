@@ -8,6 +8,7 @@ import Heading from "./Heading"
 import Searchbar from "./Searchbar"
 import Container from "./Container"
 import Bismillah from "./Bismillah"
+import ListSurah from "./ListSurah"
 
 export {
     CheckBox,
@@ -19,5 +20,6 @@ export {
     Heading,
     Searchbar,
     Container,
-    Bismillah
+    Bismillah,
+    ListSurah
 }

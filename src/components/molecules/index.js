@@ -1,5 +1,9 @@
 import SettingsCard from "./SettingsCard"
+import AyahCard from "./AyahCard"
+import Sidebar from "./Sidebar"
 
 export {
-    SettingsCard
+    SettingsCard,
+    AyahCard,
+    Sidebar
 }

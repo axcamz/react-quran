@@ -1,5 +1,5 @@
-const { Quran, Wishlist, History } = require("../Icons")
-const { default: ToggleDarkmode } = require("../ToggleDarkmode")
+const { Quran, Wishlist, History } = require("../../Icons")
+const { default: ToggleDarkmode } = require("../../ToggleDarkmode")
 
 const Sidebar = () => {
     return (

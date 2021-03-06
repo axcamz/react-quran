@@ -6,6 +6,7 @@ import { Header } from "../../components/organisms"
 import { ChevronUp } from "../../components/Icons"
 import { Bismillah } from "../../components/atoms"
 import { AyahCard } from "../../components/molecules"
+import AyahCardSkeleton from "../../components/Skeleton/AyahCardSkeleton"
 
 const Surah = () => {
     const [data, setData] = useState({})
@@ -100,7 +101,7 @@ const Surah = () => {
                 </>
             }
             {
-                loading && <h1>Loading</h1>
+                loading && <AyahCardSkeleton/>
             }
         </div>
     )

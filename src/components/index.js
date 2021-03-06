@@ -1,9 +1,9 @@
-import Navbar from './NavBar'
+import Sidebar from './Sidebar'
 import ListSurah from './ListSurah'
 import AyahCard from './AyahCard'
 
 export {
-    Navbar,
+    Sidebar,
     ListSurah,
     AyahCard
 }

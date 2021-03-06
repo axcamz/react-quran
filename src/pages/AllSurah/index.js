@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import Card from "../../components/Card"
-import {ListSurah, Navbar} from "../../components/index"
+import {ListSurah, Sidebar} from "../../components/index"
 import Header from "../../components/organisms/Header"
 import SurahCardSkeleton from "../../components/Skeleton/SurahCardSkeleton"
 import { GET_ALL_SURAH } from "../../config"
@@ -35,7 +35,7 @@ const AllSurah = () => {
 
     return (
         <div className="flex">
-            <Navbar/>
+            <Sidebar/>
             <div className="flex w-full flex-col lg:ml-24 2xl:ml-0">
                 <Header className="mb-3"/>
                 <ListSurah className="grid grid-cols-1 lg:mb-0 mb-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-6 md:gap-4 gap-2">

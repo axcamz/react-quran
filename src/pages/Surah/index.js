@@ -8,11 +8,10 @@ import { Header } from "../../components/organisms"
 import { ChevronUp } from "../../components/Icons"
 import { Bismillah } from "../../components/atoms"
 
-const Surah = (props) => {
+const Surah = () => {
     const [data, setData] = useState({})
     const [loading, setLoading] = useState(true)
     const {id: ayahId} = useParams()
-    const [settings, setSettings] = useState({})
     const [showHeader, setShowHeader] = useState(true)
 
     
@@ -21,21 +20,24 @@ const Surah = (props) => {
         window.scrollTo({top: 0, behavior: "smooth"})
     }
     useEffect(() => {
+        // Fetching data
         const getAllAyah = async () => {
             await axios.get(GET_SURAH(ayahId))
             .then(res => {
-                console.log(res.data.data);
-                setData(res.data.data)
+                const result = res.data.data
+                setData(result)
                 setLoading(false)
+                document.title = `${result.name.transliteration.id} : ${result.number}`
             })
             .catch(err => {
                 console.log(err);
                 setLoading(true)
             })
         }
+        
         // document.body.classList.remove("dark:bg-gray-900")
         // document.body.classList.add("dark:bg-gray-800")
-
+        
         let prevScrollpos = window.pageYOffset;
         window.onscroll = function() {
             let currentScrollPos = window.pageYOffset;
@@ -46,15 +48,20 @@ const Surah = (props) => {
             }
             prevScrollpos = currentScrollPos;
         }
-
-
+        
+        
         getAllAyah()
-
+        
         // Function for Unmount Component
         // return () => {
         //     document.body.classList.remove("dark:bg-gray-800")
         //     document.body.classList.add("dark:bg-gray-900")
         // }
+
+        return () => {
+            // Change Back to default Title
+            document.title = "Quran"
+        }
     }, [])
 
     const ayah = data.verses
@@ -70,7 +77,7 @@ const Surah = (props) => {
                     />
                     <div className="pt-16 lg:pt-10">
                         {
-                            data.preBismillah.text.arab && <>
+                            data.preBismillah && <>
                                 <Bismillah content={data.preBismillah.text.arab}/>
                             </>
                         }
@@ -83,7 +90,6 @@ const Surah = (props) => {
                                         number={ayah.number.inSurah}
                                         tranlation={ayah.translation.id}
                                         transliteration={ayah.text.transliteration.en}
-                                        settings={settings}
                                     />
                                 )
                             })

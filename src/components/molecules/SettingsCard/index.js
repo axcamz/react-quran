@@ -17,7 +17,7 @@ const SettingsCard = () => {
             <DropDown
                 open={open}
                 onClick={() => setOpen(!open)}
-                title="Settings"
+                title="Pengaturan"
             />
             <FadePopup open={open}>
                 <div className="font-poppins dark:text-blue-100">

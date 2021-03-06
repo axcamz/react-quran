@@ -13,7 +13,7 @@ const Header = ({className, surah, surahName}) => {
         return (
             <div className={classNames("surahHeader duration-300 transition-all flex fixed left-0 items-center justify-between w-full py-4 px-5 h-16", className)}>
                 <div className="flex items-center">
-                    <div onClick={() => history.goBack()} className="mr-2 dark:text-white p-2 rounded-full bg-gray-700 hover:shadow-lg cursor-pointer">
+                    <div onClick={() => history.goBack()} className="mr-2 dark:text-white p-2 rounded-full bg-white shadow-lg dark:bg-gray-700 hover:shadow-lg cursor-pointer">
                         <ArrowLeft className="h-5 w-5 md:h-6 md:w-6"/>
                     </div>
                     <Heading title={surahName}/>

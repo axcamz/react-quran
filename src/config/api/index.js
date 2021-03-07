@@ -1,5 +1,7 @@
-// const BASE_URL = "http://localhost:3001/" //Development
-const BASE_URL = "https://api.quran.sutanlab.id/" // Production 
+// -- Development
+// const BASE_URL = "http://localhost:3001/"
+// -- Production 
+const BASE_URL = "https://api.quran.sutanlab.id/" 
 
 const GET_ALL_SURAH = BASE_URL+"surah/"
 const GET_SURAH = (id) => `${BASE_URL}surah/${id}` 

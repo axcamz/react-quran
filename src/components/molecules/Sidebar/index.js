@@ -1,5 +1,6 @@
+import { ToggleDarkmode } from "../../atoms"
+
 const { Quran, Wishlist, History } = require("../../Icons")
-const { default: ToggleDarkmode } = require("../../ToggleDarkmode")
 
 const Sidebar = () => {
     return (

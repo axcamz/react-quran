@@ -9,6 +9,7 @@ import Searchbar from "./Searchbar"
 import Container from "./Container"
 import Bismillah from "./Bismillah"
 import ListSurah from "./ListSurah"
+import ToggleDarkmode from "./ToggleDarkmode"
 
 export {
     CheckBox,
@@ -21,5 +22,6 @@ export {
     Searchbar,
     Container,
     Bismillah,
-    ListSurah
+    ListSurah,
+    ToggleDarkmode
 }

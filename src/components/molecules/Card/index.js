@@ -1,10 +1,7 @@
 import classNames from 'classnames'
-import { useState } from 'react'
-import { BookMark } from '../Icons'
+// import { BookMark } from '../../Icons'
 
 const Card = ({name, lafadz, arti, index, onClick, ...res}) => {
-
-    const [bookmarked, setBookmarked] = useState(false)
 
     return (
         <div className={classNames("bg-white duration-300 dark:bg-gray-700 dark:text-gray-50 text-gray-900 h-28 md:h-36 p-3 rounded-md hover:shadow-lg transition-all font-poppins flex flex-col justify-between")}>

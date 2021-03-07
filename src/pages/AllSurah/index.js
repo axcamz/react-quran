@@ -1,12 +1,8 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { ListSurah } from "../../components/atoms"
-import Card from "../../components/Card"
-import { Sidebar } from "../../components/molecules"
+import { Card, Sidebar } from "../../components/molecules"
 import Header from "../../components/organisms/Header"
 import SurahCardSkeleton from "../../components/Skeleton/SurahCardSkeleton"
-import { GET_ALL_SURAH } from "../../config"
 
 const AllSurah = (props) => {
     const history = useHistory()

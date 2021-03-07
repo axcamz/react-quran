@@ -10,6 +10,7 @@ import Container from "./Container"
 import Bismillah from "./Bismillah"
 import ListSurah from "./ListSurah"
 import ToggleDarkmode from "./ToggleDarkmode"
+import Button from "./Button"
 
 export {
     CheckBox,
@@ -23,5 +24,6 @@ export {
     Container,
     Bismillah,
     ListSurah,
-    ToggleDarkmode
+    ToggleDarkmode,
+    Button,
 }

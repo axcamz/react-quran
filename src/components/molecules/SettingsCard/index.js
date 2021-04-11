@@ -5,7 +5,8 @@ import { CheckBox, DropDown, FadePopup, Switch } from "../../atoms";
 
 const SettingsCard = () => {
     // Filtering Ayah
-    const [settings, setSettings] = useContext(GlobalContext);
+    const {settingValue} = useContext(GlobalContext);
+    const [settings, setSettings] = settingValue;
     const { terjemah, latin, darkMode } = settings;
 
     const [open, setOpen] = useState(false)

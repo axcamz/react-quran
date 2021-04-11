@@ -3,8 +3,8 @@ import "./Switch.css"
 const Switch = ({checked, onClick}) => {
     return (
         <>
-            <input onClick={onClick} className="switch" type="checkbox" checked={checked} id="test" />
-            <label for="test"></label>
+            <input readOnly onClick={onClick} className="switch" type="checkbox" checked={checked} id="test" />
+            <label htmlFor="test"></label>
         </>
     )
 }

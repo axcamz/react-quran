@@ -5,6 +5,7 @@ export const GlobalContext = createContext()
 export const ContextProvider = (props) => {
 
     const localS = JSON.parse(localStorage.getItem('settings'))
+    const localBookmarked = JSON.parse(localStorage.getItem('bookmarked'))
 
     const settingsList = {
         darkMode: false,
@@ -13,12 +14,17 @@ export const ContextProvider = (props) => {
         ...localS
     }
 
+    const bookmarkedList = localBookmarked
+
     const [settings, setSettings] = useState(settingsList)
+    const [bookmarked, setBookmarked] = useState(bookmarkedList)
+    const uniqueSortedIndex = Array.from(new Set(bookmarked)).sort((a, b) =>  a - b);   
 
     localStorage.setItem('settings', JSON.stringify(settings))
+    localStorage.setItem('bookmarked', JSON.stringify(uniqueSortedIndex))
 
     return (
-       <GlobalContext.Provider value={[settings, setSettings]}>
+       <GlobalContext.Provider value={{settingValue: [settings, setSettings], bookmarkList: [bookmarked, setBookmarked]}}>
            {props.children}
        </GlobalContext.Provider>
     )

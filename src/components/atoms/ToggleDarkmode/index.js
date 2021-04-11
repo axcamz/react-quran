@@ -3,7 +3,8 @@ import { GlobalContext } from "../../../context"
 import useTheme from "../../../hooks/useTheme";
 
 const ToggleDarkmode = () => {
-    const [settings, setSettings] = useContext(GlobalContext);
+    const {settingValue} = useContext(GlobalContext);
+    const [settings, setSettings] = settingValue
     const { darkMode } = settings;
 
     useTheme(darkMode)

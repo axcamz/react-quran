@@ -9,8 +9,8 @@ const AyahCardSkeleton = () => {
                     <Skeleton className="h-14 max-w-3xl w-full bg-gray-400 dark:bg-gray-400"/>
                 </div>
                 <div className="flex justify-between items-center pt-5">
-                    <Skeleton className="h-10 max-w-xl w-full bg-gray-400 dark:bg-gray-400"/>
-                    <Skeleton className="h-12 max-w-xl w-full bg-gray-300 dark:bg-gray-400"/>
+                    <Skeleton className="h-10 w-52 max-w-xl lg:w-full bg-gray-400 dark:bg-gray-400"/>
+                    <Skeleton className="h-12 w-52 max-w-xl lg:w-full bg-gray-300 dark:bg-gray-400"/>
                 </div>
                 <div className="shimmer"></div>
             </div>

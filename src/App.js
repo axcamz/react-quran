@@ -7,7 +7,7 @@ function App() {
   return (
     <ContextProvider>
       <Container>
-        <div className="dark:bg-gray-900 h-full bg-theme-100 transition-all duration-300">
+        <div className="dark:bg-gray-900 h-full transition-all duration-300">
           <Routes/>
         </div>
       </Container>

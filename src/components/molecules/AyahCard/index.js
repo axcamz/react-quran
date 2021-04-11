@@ -1,10 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import classNames from 'classnames'
 import { GlobalContext } from "../../../context";
 import { Arabic, ItalicLatin } from "../../atoms";
 
 const AyahCard = ({ayah, number, tranlation, transliteration}) => {
-    const [settings] = useContext(GlobalContext);
+    const {settingValue} = useContext(GlobalContext);
+    const [settings] = settingValue
     const { terjemah, latin } = settings
     return (
         <div className="px-4 w-full border-b dark:text-blue-100 py-5 dark:border-gray-700 border-gray-200">

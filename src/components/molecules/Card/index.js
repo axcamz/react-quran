@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { GlobalContext } from '../../../context'
 import { BookMark } from '../../Icons'
 
@@ -8,6 +8,7 @@ const Card = ({name, lafadz, arti, index, onClick, ...res}) => {
     const [bookmarked, setBookmarked] = bookmarkList;
     const isBookmarked = bookmarked.includes(index);
     const [clicked, setClicked] = useState(isBookmarked);
+    const [notif, setNotif] = useState(false)
 
     const handleBookmarked = () => {
         if(clicked){
@@ -17,11 +18,16 @@ const Card = ({name, lafadz, arti, index, onClick, ...res}) => {
         } else {
             setBookmarked([...bookmarked, index])
             setClicked(true)
+            setNotif(true)
+            setTimeout(() => {
+                setNotif(false)
+            }, 2000);
         }
     }
 
+
     return (
-        <div className={classNames("bg-white duration-300 relative dark:bg-gray-700 dark:text-gray-50 text-gray-900 h-28 md:h-36 p-3 rounded-md hover:shadow-lg transition-all font-poppins flex flex-col justify-between")}>
+        <div className={classNames("bg-white duration-300 overflow-hidden relative dark:bg-gray-700 dark:text-gray-50 text-gray-900 h-28 md:h-36 p-3 rounded-md hover:shadow-lg transition-all font-poppins flex flex-col justify-between")}>
             <div className="flex justify-between">
                 <div className="flex justify-center items-center dark:bg-gray-600 bg-theme-200 text-sm lg:text-lg lg:w-8 lg:h-8 h-6 w-6 rounded p-1 font-semibold dark:text-white transition-all duration-300 text-theme-600">{index}</div>
                 <div className="cursor-pointer">
@@ -37,6 +43,7 @@ const Card = ({name, lafadz, arti, index, onClick, ...res}) => {
                     <a href={false} onClick={onClick} className="text-3xl cursor-pointer hover:text-theme-500 transition-all lg:text-4xl font-serif">{lafadz}</a>
                 </div>
             </div>
+            <span className={`absolute block px-2 text-theme-800 bg-theme-300 dark:bg-theme-600 dark:text-theme-100 right-12 rounded transition-transform transform ${notif ? "" : "-translate-y-10"}`}>Ditandai</span>
         </div>
     )
 }

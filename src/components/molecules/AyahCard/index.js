@@ -8,7 +8,7 @@ const AyahCard = ({ayah, number, tranlation, transliteration}) => {
     const [settings] = settingValue
     const { terjemah, latin } = settings
     return (
-        <div className="px-4 w-full border-b dark:text-blue-100 py-5 dark:border-gray-700 border-gray-200">
+        <div className="px-4 w-full border-b dark:text-blue-100 py-5 dark:border-gray-700 border-theme-200">
             <Arabic
                 arab={ayah}
                 number={number}

@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { ListSurah } from "../../components/atoms"
 import { BookMark } from "../../components/Icons"
-import { Card, Sidebar } from "../../components/molecules"
+import { Card } from "../../components/molecules"
 import Header from "../../components/organisms/Header"
 import SurahCardSkeleton from "../../components/Skeleton/SurahCardSkeleton"
 import { GlobalContext } from "../../context"
@@ -37,39 +37,36 @@ const BookmarkedSurah = (props) => {
     }, [loading])
     
     return (
-        <div className="flex">
-            <Sidebar/>
-            <div className="flex w-full flex-col lg:ml-24 2xl:ml-0">
-                <Header className="mb-3"/>
-                <ListSurah>
-                    <div  className="grid grid-cols-1 lg:mb-0 mb-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-6 md:gap-4 gap-2">
-                        {
-                            isFinish && (finalData.length > 0) ? finalData.map(surah => {
-                                console.log(finalData);
-                                return (
-                                    <Card
-                                        key={surah.number}
-                                        index={surah.number}
-                                        lafadz={surah.name.short}
-                                        name={surah.name.transliteration.id}
-                                        arti={surah.name.translation.id}
-                                        onClick={() => getSurah(surah.number)}
-                                    />
-                                )
-                            }) : <div className="col-span-3">
-                                    <h1 className=" dark:text-gray-50 text-gray-900 font-poppins md:text-2xl text-xl font-bold mb-5">Tidak Ada Surah yang di Bookmark</h1>
-                                    <span className=" dark:text-gray-50 text-lg text-gray-900 inline font-poppins w-full">Klik Icon <BookMark className="h-6 w-6 inline text-theme-600" fill="none"/> Untuk men Bookmark Surah</span>
-                            </div> 
-                        }
-                        {
-                            loading && [1,2,3].map(key => {
-                                return <SurahCardSkeleton key={key}/>
-                            })
-                        }
+        <div className="flex w-full flex-col lg:ml-24 2xl:ml-0">
+            <Header className="mb-3"/>
+            <ListSurah>
+                <div  className="grid grid-cols-1 lg:mb-0 mb-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-6 md:gap-4 gap-2">
+                    {
+                        isFinish && (finalData.length > 0) ? finalData.map(surah => {
+                            console.log(finalData);
+                            return (
+                                <Card
+                                    key={surah.number}
+                                    index={surah.number}
+                                    lafadz={surah.name.short}
+                                    name={surah.name.transliteration.id}
+                                    arti={surah.name.translation.id}
+                                    onClick={() => getSurah(surah.number)}
+                                />
+                            )
+                        }) : <div className="col-span-3">
+                                <h1 className=" dark:text-gray-50 text-gray-900 font-poppins md:text-2xl text-xl font-bold mb-5">Tidak Ada Surah yang di Bookmark</h1>
+                                <span className=" dark:text-gray-50 text-lg text-gray-900 inline font-poppins w-full">Klik Icon <BookMark className="h-6 w-6 inline text-theme-600" fill="none"/> Untuk men Bookmark Surah</span>
+                        </div> 
+                    }
+                    {
+                        loading && [1,2,3].map(key => {
+                            return <SurahCardSkeleton key={key}/>
+                        })
+                    }
 
-                    </div>
-                </ListSurah>
-            </div>
+                </div>
+            </ListSurah>
         </div>
     )
 }

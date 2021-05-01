@@ -12,35 +12,32 @@ const AllSurah = (props) => {
     }
 
     return (
-        <div className="flex">
-            <Sidebar/>
-            <div className="flex w-full flex-col lg:ml-24 2xl:ml-0">
-                <Header className="mb-3"/>
-                <ListSurah>
-                    <div  className="grid grid-cols-1 lg:mb-0 mb-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-6 md:gap-4 gap-2">
-                        {
-                            !loading && data.map(surah => {
-                                return (
-                                    <Card
-                                        key={surah.number}
-                                        index={surah.number}
-                                        lafadz={surah.name.short}
-                                        name={surah.name.transliteration.id}
-                                        arti={surah.name.translation.id}
-                                        onClick={() => getSurah(surah.number)}
-                                    />
-                                )
-                            })
-                        }
-                        {
-                            loading && [1,2,3].map(key => {
-                                return <SurahCardSkeleton key={key}/>
-                            })
-                        }
+        <div className="flex w-full flex-col lg:ml-24 2xl:ml-0">
+            <Header className="mb-3"/>
+            <ListSurah>
+                <div  className="grid grid-cols-1 lg:mb-0 mb-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-6 md:gap-4 gap-2">
+                    {
+                        !loading && data.map(surah => {
+                            return (
+                                <Card
+                                    key={surah.number}
+                                    index={surah.number}
+                                    lafadz={surah.name.short}
+                                    name={surah.name.transliteration.id}
+                                    arti={surah.name.translation.id}
+                                    onClick={() => getSurah(surah.number)}
+                                />
+                            )
+                        })
+                    }
+                    {
+                        loading && [1,2,3].map(key => {
+                            return <SurahCardSkeleton key={key}/>
+                        })
+                    }
 
-                    </div>
-                </ListSurah>
-            </div>
+                </div>
+            </ListSurah>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 // -- Development
-const BASE_URL = "http://192.168.43.55:3001/"
+const BASE_URL = "http://localhost:3001/"
 // -- Production 
 // const BASE_URL = "https://api.quran.sutanlab.id/" 
 

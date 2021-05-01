@@ -6,7 +6,9 @@ import { BookMark } from '../../Icons'
 const Card = ({name, lafadz, arti, index, onClick, ...res}) => {
     const {bookmarkList} = useContext(GlobalContext);
     const [bookmarked, setBookmarked] = bookmarkList;
+
     const isBookmarked = bookmarked.includes(index);
+    
     const [clicked, setClicked] = useState(isBookmarked);
     const [notif, setNotif] = useState(false)
 

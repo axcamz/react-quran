@@ -20,8 +20,8 @@ export const ContextProvider = (props) => {
     const [bookmarked, setBookmarked] = useState(bookmarkedList)
     const uniqueSortedIndex = Array.from(new Set(bookmarked)).sort((a, b) =>  a - b);   
 
-    localStorage.setItem('settings', JSON.stringify(settings))
     localStorage.setItem('bookmarked', JSON.stringify(uniqueSortedIndex))
+    localStorage.setItem('settings', JSON.stringify(settings))
 
     return (
        <GlobalContext.Provider value={{settingValue: [settings, setSettings], bookmarkList: [bookmarked, setBookmarked]}}>

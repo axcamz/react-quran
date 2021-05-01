@@ -13,9 +13,12 @@ const Card = ({name, lafadz, arti, index, onClick, ...res}) => {
     const [notif, setNotif] = useState(false)
 
     const handleBookmarked = () => {
-        if(clicked){
+        function deleteIndex() {
             (bookmarked.splice(bookmarked.indexOf(index), 1))
-            setBookmarked(bookmarked)
+            setBookmarked([...bookmarked])
+        }
+        if(clicked){
+            deleteIndex()
             setClicked(false)
         } else {
             setBookmarked([...bookmarked, index])

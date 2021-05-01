@@ -26,7 +26,7 @@ const BookmarkedSurah = (props) => {
                 let dataBookmarked = [];
                 for (let i = 0; i < bookmarked.length; i++) {
                     dataBookmarked.push(data[bookmarked[i] - 1])
-                    console.log(dataBookmarked);
+                    // console.log(dataBookmarked);
                 }
                 setFinalData(dataBookmarked)
                 setIsFinish(true)
@@ -43,7 +43,7 @@ const BookmarkedSurah = (props) => {
                 <div  className="grid grid-cols-1 lg:mb-0 mb-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-6 md:gap-4 gap-2">
                     {
                         isFinish && (finalData.length > 0) ? finalData.map(surah => {
-                            console.log(finalData);
+                            // console.log(finalData);
                             return (
                                 <Card
                                     key={surah.number}

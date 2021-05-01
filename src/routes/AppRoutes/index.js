@@ -46,6 +46,7 @@ const Routes = () => {
         <Router>
             <Switch>
                 <Route exact path="/"><Redirect to="/h/surah"/></Route>
+                <Route exact path="/h"><Redirect to="/h/surah"/></Route>
                 <Route path="/h">
                     {/* <AllSurah data={data} loading={loading}/> */}
                     <Home data={data} loading={loading}/>

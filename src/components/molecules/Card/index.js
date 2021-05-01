@@ -41,11 +41,11 @@ const Card = ({name, lafadz, arti, index, onClick, ...res}) => {
             </div>
             <div className="flex justify-between items-center">
                 <div>
-                    <button onClick={onClick} className="text-xl hover:underline cursor-pointer block lg:text-2xl font-semibold">{name}</button>
+                    <button onClick={onClick} className="text-xl outline-none hover:underline cursor-pointer block lg:text-2xl font-semibold">{name}</button>
                     <span className="text-sm cursor-default lg:text-lg dark:text-gray-50 text-gray-700 font-light">{arti}</span>
                 </div>
                 <div>
-                    <button onClick={onClick} className="text-3xl cursor-pointer hover:text-theme-500 transition-all lg:text-4xl font-serif">{lafadz}</button>
+                    <button onClick={onClick} className="text-3xl outline-none cursor-pointer hover:text-theme-500 transition-all lg:text-4xl font-serif">{lafadz}</button>
                 </div>
             </div>
             <span className={`absolute block px-2 text-theme-800 bg-theme-300 dark:bg-theme-600 dark:text-theme-100 right-12 rounded transition-transform transform ${notif ? "" : "-translate-y-10"}`}>Ditandai</span>

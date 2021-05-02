@@ -5,7 +5,7 @@ import { GET_SURAH } from "../../config"
 import { Header } from "../../components/organisms"
 import { ChevronUp } from "../../components/Icons"
 import { Bismillah } from "../../components/atoms"
-import { AyahCard } from "../../components/molecules"
+import { AyahCard, MetaSurah } from "../../components/molecules"
 import AyahCardSkeleton from "../../components/Skeleton/AyahCardSkeleton"
 
 const Surah = () => {
@@ -13,6 +13,7 @@ const Surah = () => {
     const [loading, setLoading] = useState(true)
     const {id: ayahId} = useParams()
     const [showHeader, setShowHeader] = useState(true)
+    const [openMeta, setOpenMeta] = useState(false)
 
     
     // Scroll to Top
@@ -61,6 +62,7 @@ const Surah = () => {
         return () => {
             // Change Back to default Title
             document.title = "Quran"
+            setShowHeader(true)
         }
     }, [])
 
@@ -74,12 +76,21 @@ const Surah = () => {
                         surah
                         surahName={data.name.transliteration.id}
                         className={`${showHeader ? "top-0":"-top-16"}`}
+                        onClick={() => setOpenMeta(!openMeta)}
+                    />
+                    <MetaSurah
+                        openMeta={openMeta}
+                        surahName={data.name.transliteration.id}
+                        nameTranslation={data.name.translation.id}
+                        revelation={data.revelation.id}
+                        totalVerses={data.numberOfVerses}
+                        nameInArabic={data.name.long}
+                        tafsir={data?.tafsir?.id}
+                        revelationInArabic={data.revelation.arab}
                     />
                     <div className="pt-16 lg:pt-10">
                         {
-                            data.preBismillah && <>
-                                <Bismillah content={data.preBismillah.text.arab}/>
-                            </>
+                            data.preBismillah && <Bismillah content={data.preBismillah.text.arab}/>
                         }
                         {
                             ayah.map(ayah => {
@@ -103,6 +114,7 @@ const Surah = () => {
             {
                 loading && <AyahCardSkeleton/>
             }
+            
         </div>
     )
 }

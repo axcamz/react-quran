@@ -11,6 +11,7 @@ import Bismillah from "./Bismillah"
 import ListSurah from "./ListSurah"
 import ToggleDarkmode from "./ToggleDarkmode"
 import Button from "./Button"
+import ModalCenter from "./ModalCenter"
 
 export {
     CheckBox,
@@ -26,4 +27,5 @@ export {
     ListSurah,
     ToggleDarkmode,
     Button,
+    ModalCenter,
 }

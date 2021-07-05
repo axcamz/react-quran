@@ -28,6 +28,7 @@ const Surah = () => {
                 const result = res.data.data
                 setData(result)
                 setLoading(false)
+                window.scrollTo({top: 0, behavior: "auto"})
                 document.title = `${result.name.transliteration.id} : ${result.number}`
             })
             .catch(err => {

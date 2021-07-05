@@ -51,8 +51,11 @@ const BookmarkedSurah = (props) => {
             <Header className="mb-3"/>
             <ListSurah>
                 <div  className="grid grid-cols-1 lg:mb-0 mb-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 lg:gap-6 md:gap-4 gap-2">
+
                     {
-                        isFinish && (finalData.length > 0) ? finalData.map(surah => {
+                        loading ? [1,2,3].map(key => {
+                            return <SurahCardSkeleton key={key}/>
+                        }) : isFinish && (finalData.length > 0) ? finalData.map(surah => {
                             // console.log(finalData);
                             return (
                                 <Card
@@ -65,11 +68,6 @@ const BookmarkedSurah = (props) => {
                                 />
                             )
                         }) : <TidakAdaSurah/>
-                    }
-                    {
-                        loading && [1,2,3].map(key => {
-                            return <SurahCardSkeleton key={key}/>
-                        })
                     }
 
                 </div>

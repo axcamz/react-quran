@@ -1,21 +1,23 @@
 import { ModalCenter } from "../../atoms"
 
-const MetaSurah = ({ 
-        openMeta, 
+const About = ({ 
+        isOpen, 
         surahName, 
         nameTranslation, 
         nameInArabic, 
         revelation, 
         revelationInArabic, 
         tafsir, 
-        totalVerses 
+        totalVerses,
+        onClick
     }) => {
     return (
-        <ModalCenter visible={openMeta}>
+        <ModalCenter visible={isOpen}>
+            <div className="font-bold text-white fixed p-2 top-0 right-0 hover:bg-theme-400 rounded cursor-pointer" onClick={onClick}>X</div>
             <div className="flex justify-between">
                 <div>
                     <h1 className="font-bold text-2xl text-theme-800 dark:text-theme-500">{surahName}</h1>
-                    <span className="text-xl">{nameTranslation}</span> <br/>
+                    <span className="md:text-xl text-lg">{nameTranslation}</span> <br/>
                     <span className="italic">{revelation}</span> <br/>
                     <span className="text-sm">{totalVerses} Ayah</span> 
                 </div>
@@ -31,4 +33,4 @@ const MetaSurah = ({
     )
 }
 
-export default MetaSurah
+export default About

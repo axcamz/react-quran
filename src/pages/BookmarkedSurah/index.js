@@ -55,7 +55,7 @@ const BookmarkedSurah = (props) => {
                                 />
                             )
                         }) : <div className="col-span-3">
-                                <h1 className=" dark:text-gray-50 text-gray-900 font-poppins md:text-2xl text-xl font-bold mb-5">Tidak Ada Surah yang di Bookmark</h1>
+                                <h1 className=" dark:text-gray-50 text-theme-900 font-poppins md:text-2xl text-xl font-bold mb-5">Tidak Ada Surah yang di Bookmark</h1>
                                 <span className=" dark:text-gray-50 text-lg text-gray-900 inline font-poppins w-full">Klik Icon <BookMark className="h-6 w-6 inline text-theme-600" fill="none"/> Untuk men Bookmark Surah</span>
                         </div> 
                     }

@@ -5,7 +5,7 @@ import { GET_SURAH } from "../../config"
 import { Header } from "../../components/organisms"
 import { ChevronUp } from "../../components/Icons"
 import { Bismillah } from "../../components/atoms"
-import { AyahCard, MetaSurah } from "../../components/molecules"
+import { AyahCard, About } from "../../components/molecules"
 import AyahCardSkeleton from "../../components/Skeleton/AyahCardSkeleton"
 
 const Surah = () => {
@@ -13,7 +13,7 @@ const Surah = () => {
     const [loading, setLoading] = useState(true)
     const {id: ayahId} = useParams()
     const [showHeader, setShowHeader] = useState(true)
-    const [openMeta, setOpenMeta] = useState(false)
+    const [openModal, setOpenModal] = useState(false)
 
     
     // Scroll to Top
@@ -38,20 +38,22 @@ const Surah = () => {
         
         // document.body.classList.remove("dark:bg-gray-900")
         // document.body.classList.add("dark:bg-gray-800")
-        
-        let prevScrollpos = window.pageYOffset;
-        window.onscroll = function() {
-            let currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                setShowHeader(true)
-            } else {
-                setShowHeader(false)
+        const _showHeader = () => {
+            let prevScrollpos = window.pageYOffset+1;
+            window.onscroll = function() {
+                let currentScrollPos = window.pageYOffset ?? 0;
+                if (prevScrollpos > currentScrollPos) {
+                    setShowHeader(true)
+                } else {
+                    setShowHeader(false)
+                }
+                prevScrollpos = currentScrollPos;
             }
-            prevScrollpos = currentScrollPos;
         }
         
         
         getAllAyah()
+        _showHeader()
         
         // Function for Unmount Component
         // return () => {
@@ -76,17 +78,18 @@ const Surah = () => {
                         surah
                         surahName={data.name.transliteration.id}
                         className={`${showHeader ? "top-0":"-top-16"}`}
-                        onClick={() => setOpenMeta(!openMeta)}
+                        onClick={() => setOpenModal(!openModal)}
                     />
-                    <MetaSurah
-                        openMeta={openMeta}
+                    <About
+                        onClick={() => setOpenModal(!openModal)}
+                        isOpen={openModal}
                         surahName={data.name.transliteration.id}
+                        nameInArabic={data.name.long}
                         nameTranslation={data.name.translation.id}
                         revelation={data.revelation.id}
-                        totalVerses={data.numberOfVerses}
-                        nameInArabic={data.name.long}
-                        tafsir={data?.tafsir?.id}
                         revelationInArabic={data.revelation.arab}
+                        totalVerses={data.numberOfVerses}
+                        tafsir={data?.tafsir?.id}
                     />
                     <div className="pt-16 lg:pt-10">
                         {
